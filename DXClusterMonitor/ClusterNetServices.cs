@@ -25,6 +25,8 @@ namespace DXClusterMonitor
                 var spotsInString = mywebClient.DownloadString("https://www.dxcluster.co.uk/index.php?/api/all");
             }
 
+
+
             return currentSpots;
         }
     }
