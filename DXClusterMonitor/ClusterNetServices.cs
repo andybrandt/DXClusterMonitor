@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net;
 using System.Net.Http;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+
 
 namespace DXClusterMonitor
 {
@@ -23,8 +26,9 @@ namespace DXClusterMonitor
                 mywebClient.Headers["User-Agent"] = "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.2.15) Gecko/20110303 Firefox/3.6.15";
 
                 var spotsInString = mywebClient.DownloadString("https://www.dxcluster.co.uk/index.php?/api/all");
+                currentSpots = JsonConvert.DeserializeObject<Spot>(spotsInString);
             }
-
+           
 
 
             return currentSpots;
