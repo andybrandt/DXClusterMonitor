@@ -16,10 +16,13 @@ namespace DXClusterMonitor
             Queue<Spot> currentSpots = new Queue<Spot>();
             using (WebClient mywebClient = new WebClient())
             {
-                // ServicePointManager.ServerCertificateValidationCallback += ValidateRemoteCertificate;
-                ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3;
+                // moze ServicePointManager.CertificatePolicy by pomoglo?
+                // moze to by pomoglo ServicePointManager.ServerCertificateValidationCallback += ValidateRemoteCertificate;
+                // to ponizej pomoglo :)
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+                mywebClient.Headers["User-Agent"] = "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.2.15) Gecko/20110303 Firefox/3.6.15";
 
-                var spotsInString = mywebClient.DownloadString("http://www.dxcluster.co.uk/index.php?/api/all");
+                var spotsInString = mywebClient.DownloadString("https://www.dxcluster.co.uk/index.php?/api/all");
             }
 
             return currentSpots;
