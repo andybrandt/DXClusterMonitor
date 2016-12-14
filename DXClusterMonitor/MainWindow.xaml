@@ -1,0 +1,14 @@
+﻿<Window x:Class="DXClusterMonitor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DXClusterMonitor"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="491.394" Width="534.957">
+    <Grid>
+        <Button x:Name="loadButton" Content="LOAD" HorizontalAlignment="Right" Height="104.167" Margin="0,22.007,10,0" VerticalAlignment="Top" Width="38.834" FontSize="10" Click="loadButton_Click"/>
+        <Label x:Name="versionNumberLabel" Content="V" HorizontalAlignment="Right" Height="19.728" Margin="0,0,10,10" Style="{DynamicResource SimpleLabel}" VerticalAlignment="Bottom" Width="32.494" FontSize="10"/>
+
+    </Grid>
+</Window>
